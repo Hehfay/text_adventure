@@ -1,6 +1,6 @@
 # 12.25.2014
-# This class performs CRUD operations on a file.
-# Eventually this will need to be updated to store
+# TODO This class performs CRUD operations on a file.
+# Eventually, this will need to be updated to store
 # game data for text adventure, but this is a good
 # start.
 class Crud
@@ -32,23 +32,23 @@ class Crud
 	end
 
 	def update(key, value)
-			if @record.has_key?(key.to_sym)
-				@record[key.to_sym] = value.to_i
-				update_file
-				'Update successful.'
-			else
-				"#{key} not found."
-			end
+		if @record.has_key?(key.to_sym)
+			@record[key.to_sym] = value.to_i
+			update_file
+			'Update successful.'
+		else
+			"#{key} not found."
+		end
 	end
 
 	def delete(key)
-			if @record.has_key?(key.to_sym)
-				@record.delete(key.to_sym)
-				update_file
-				'Delete successful.'
-			else
-				"#{key} not found."
-			end
+		if @record.has_key?(key.to_sym)
+			@record.delete(key.to_sym)
+			update_file
+			'Delete successful.'
+		else
+			"#{key} not found."
+		end
 	end
 
 	private
@@ -62,7 +62,7 @@ class Crud
 	def update_hash
 		f = File.open(@file_name, 'r')
 			f.each_line do |line|
-				word = line.split(" ")
+				word = line.split(' ')
 				@record[word[0].to_sym] = word[1].to_i
 			end
 		f.close
