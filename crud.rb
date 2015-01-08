@@ -7,13 +7,13 @@ class Crud
 	
 	public
 
-	def initialize(file_name)
+	def Crud.initialize(file_name)
 		@file_name = file_name
 		@record = {}
 		update_hash if File.exists?(@file_name)  
 	end
 
-	def create(name, rating)
+	def Crud.create(name, rating)
 		if @record.has_key?(name.to_sym)
 			"#{name} record already exists."
 		else
@@ -23,7 +23,7 @@ class Crud
 		end
 	end
 
-	def read
+	def Crud.read
 		counter = 1
 		@record.each do |key, value| 
 			printf("%.2i %s %i\n", counter, key, value) 
@@ -31,7 +31,7 @@ class Crud
 		end
 	end
 
-	def update(key, value)
+	def Crud.update(key, value)
 		if @record.has_key?(key.to_sym)
 			@record[key.to_sym] = value.to_i
 			update_file
@@ -41,7 +41,7 @@ class Crud
 		end
 	end
 
-	def delete(key)
+	def Crud.delete(key)
 		if @record.has_key?(key.to_sym)
 			@record.delete(key.to_sym)
 			update_file

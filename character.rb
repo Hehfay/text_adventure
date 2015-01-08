@@ -1,20 +1,49 @@
 class Character
 
-  attr_reader :name,
+  attr_reader :character_name,
               :health,
-              :attack,
-              :defense
+              :strength,
+              :endurance,
 
-  def initialize
+              :attack_rating,
+              :armor_rating,
+
+              :level,
+              :experience,
+
+              :gold,
+              :fame,
+              :infamy,
+
+              :inventory
+
+  public
+
+  def initialize(saved_data)
+    set_name(name)
   end
 
   def deal_damage
   end
 
-  def take_damage
+  def take_damage(amount)
   end
 
-  def dialog
+  def use_item
+  end
+
+  def show_attributes
+    # Return character information
+    # in array or hash.
+  end
+
+  def talk
+  end
+
+  private
+
+  def set_name(name)
+    @name = name
   end
 
 end

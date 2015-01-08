@@ -1,21 +1,5 @@
 class Player < Character
 
-	attr_reader :name, 
-							:health, 
-							:strength, 
-							:endurance,
-
-							:armor_rating, 
-							:attack_rating,
-
-							:level,
-							:experience,
-							:location,
-
-							:gold,
-							:fame,
-							:infamy
-
 	public
 
 	def initialize(name)
@@ -25,22 +9,16 @@ class Player < Character
 		# (loading a saved game).
 	end
 
-	def deal_damage
+	def battle_victory(experience)
 	end
 
-	def take_damage
+	def equip_weapon(new_weapon)
 	end
 
-	def equip(item)
+	def equip_armor(new_armor)
 	end
 
-	def use(item)
-	end
 
-	def show_attributes
-		# Return character information
-		# in array or hash.
-	end
 
 	private
 
